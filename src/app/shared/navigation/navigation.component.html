@@ -1,0 +1,54 @@
+<div class="sidebar hidden-sm-down">
+    <ul class="nav in" id="side-menu">
+        <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+            <!-- input-group -->
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
+            <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+            </span></div>
+            <!-- /input-group -->
+        </li>
+        <li class="user-pro">
+            <a href="#" class="text-center">
+                <span>Administrador</span>
+                <small class="text-center"></small>
+            </a>
+        </li>
+        <li><a [routerLink]="['/dashboard']" [routerLinkActive]="['active']" class="waves-effect"><i class="fa fa-home"></i> <span
+                class="hide-menu">Home</span></a></li>
+        <!-- <li class=""><a href="javascript:void(0);" class="waves-effect"><i class="fa fa-envelope-o"></i> <span
+                class="hide-menu"> Mailbox <span class="fa arrow"></span><span
+                class="label label-rouded label-danger pull-right">6</span></span></a>
+        </li> -->
+        <!-- <li>
+            <a [routerLink]="['/clientes','CLIENTE']" [routerLinkActive]="['active']">
+                <i class="fa fa-edit"></i>
+                <span class="hide-menu">Clientes</span>
+            </a>
+        </li> -->
+        <li>
+            <a [routerLink]="['/mecanicos','MECANICO']" [routerLinkActive]="['active']">
+                <i class="fa fa-edit"></i>
+                <span class="hide-menu">Mecanicos</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/asignar']" [routerLinkActive]="['active']">
+                <i class="fa fa-edit"></i>
+                <span class="hide-menu">Asignar </span>
+            </a>
+        </li>
+        <!-- <li>
+            <a  [routerLink]="['/forms']" [routerLinkActive]="['active']">
+                <i class="fa fa-edit"></i>
+                <span class="hide-menu">Gestionar Mantenimientos </span>
+            </a>
+        </li>
+        <li>
+            <a  [routerLink]="['/tables']" [routerLinkActive]="['active']">
+                <i class="fa fa-bars"></i>
+                <span class="hide-menu">Facturacion</span>
+            </a>
+        </li> -->
+    </ul>
+</div>

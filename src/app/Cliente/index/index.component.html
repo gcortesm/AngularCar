@@ -1,0 +1,17 @@
+<div class="container" id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row row-stat">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-divider">Registrar  Car-Center</div>
+          <div class="panel-body">
+            <button (click)="loadFormAdd()" *ngIf="!addFlat" class="btn btn-primary"> Agregar </button>
+            <button (click)="loadFormAdd()" *ngIf="addFlat" class="btn btn-primary"> Listar </button>
+            <app-listar *ngIf="!addFlat" tipo={{tipo}}></app-listar>
+            <app-add *ngIf="addFlat" tipo={{tipo}}></app-add>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

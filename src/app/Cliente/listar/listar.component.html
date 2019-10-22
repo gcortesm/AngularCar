@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="container-fluid">
+      <div class="row ">
+            <div class="col-md-12">
+              <div class="panel panel-default ">
+                  <div class="panel-heading panel-heading-no-divider">{{tipo}}</div>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Codigo </th>
+                              <th>Identificacion</th>
+                              <th>Nombre</th>
+                              <th>celular</th>
+                              <th>Email</th>
+                              <th>Direccion</th>
+                              <th style="width:  5%;"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let persona of personas ">
+                              <td>{{persona.codPersona}}</td>
+                              <td>
+                                  {{persona.documento}}
+                              </td>
+                              <td>
+                                  {{persona.primerNombre + " " + persona.segundoNombre + " " + persona.primerApellido + " " + persona.segundoApellido}}
+                              </td>
+                              <td>{{persona.celular}}</td>
+                              <td>{{persona.email}}</td>
+                              <td>{{persona.direccion}}</td>
+                              <td class="actions">
+                                <a href="#">
+                                  <i class="zmdi zmdi-delete"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+    </div>

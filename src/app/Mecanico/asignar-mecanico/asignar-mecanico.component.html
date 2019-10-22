@@ -1,0 +1,49 @@
+
+<div class="container" id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row ">
+          <div class="col-md-12">
+            <div class="panel panel-default ">
+                <div class="panel-heading panel-heading-no-divider">Mecanicos <span class="panel-subtitle" > Lista de mecanicos cuya asignacion ha sido poco con relacion a los demas. </span></div>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Codigo </th>
+                            <th>Identificacion</th>
+                            <th>Nombre</th>
+                            <th>Mantenimiento</th>
+                            <th style="width:  5%;"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let persona of personas;let i =index ">
+                            <td>{{persona.codPersona}}</td>
+                            <td>
+                                {{persona.documento}}
+                            </td>
+                            <td>
+                                {{persona.primerNombre + " " + persona.segundoNombre + " " + persona.primerApellido + " " + persona.segundoApellido}}
+                            </td>
+                            <td>
+                                <select
+                                [(ngModel)]="selected[i]"
+                                class="form-control"
+                              >
+                                <option *ngFor="let c of mantenimientos" [ngValue]="c">
+                                    {{c.fkVehiculo + " "+ c.fecha}}</option
+                                >
+                              </select>
+                            </td>
+                            <td class="actions">
+                              <button class="btn btn-primary" (click) = "asignar(persona,selected[i])">Asignar</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

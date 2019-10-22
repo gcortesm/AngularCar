@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading panel-heading-divider">Registrar {{tipo}}
+            </div>
+            <form class="form-horizontal" #form="ngForm" >
+                <div class="form-group">
+                    <div class="row">
+                      <label class="col-sm-3 control-label" for="form-control-9">Tipo Documento</label>
+                      <div class="col-sm-4">
+                        <select  class="form-control" [(ngModel)]="persona.tipoDocumento" name ="tipodocumento" required #tipodoc = ngModel [ngClass]="{ 'is-invalid': tipodoc.touched && !tipodoc.valid }" >
+                          <option value="CC">Cedula Ciudadania</option>
+                          <option value="TI">Tarjeta Identidad</option>
+                          <option value="CE">Cedula Extranjeria</option>
+                        </select>
+                      </div>
+                      <label class="col-sm-2 control-label" for="form-control-1">Identificacion</label>
+                      <div class="col-sm-3">
+                        <input  class="form-control" type="text" [(ngModel)]="persona.documento" name ="documento" pattern="[0-9]+" title="Solo se permiten numeros" required #doc=ngModel [ngClass]="{ 'is-invalid': doc.touched && !doc.valid }" >
+                      </div>
+                    </div>
+                </div>
+             
+              <div class="form-group">
+                  <div class="row">
+                    <label class="col-sm-3 control-label" for="form-control-1" >Primer Nombre</label>
+                    <div class="col-sm-9">
+                      <input  class="form-control" type="text" [(ngModel)]="persona.primerNombre" required   name="primerNombre" #pnombre=ngModel [ngClass]="{ 'is-invalid': pnombre.touched && !pnombre.valid }" >
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                      <label class="col-sm-3 control-label" for="form-control-1">Segundo Nombre</label>
+                      <div class="col-sm-9">
+                        <input  class="form-control" type="text" [(ngModel)]="persona.segundoNombre"   name="segundoNombre">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                      <label class="col-sm-3 control-label" for="form-control-1">Primer Apellido</label>
+                      <div class="col-sm-9">
+                        <input  class="form-control" type="text" [(ngModel)]="persona.primerApellido" required name="primerApellido" #sape=ngModel [ngClass]="{ 'is-invalid': sape.touched && !sape.valid }">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                      <label class="col-sm-3 control-label" for="form-control-1">Segundo Apellido</label>
+                      <div class="col-sm-9">
+                        <input class="form-control" type="text" [(ngModel)]="persona.segundoApellido" name="segundoApellido">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                      <label class="col-sm-3 control-label" for="form-control-1">Celular</label>
+                      <div class="col-sm-9"> 
+                        <input  class="form-control" type="text" [(ngModel)]="persona.celular" title = "Solo numeros no mayor a 10 digitos" pattern="[0-9]+" maxlength="10" name="celular" required #celular=ngModel [ngClass]="{ 'is-invalid': celular.touched && !celular.valid }">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                      <label class="col-sm-3 control-label" for="form-control-1">Direccion</label>
+                      <div class="col-sm-9">
+                        <input  class="form-control" type="text" [(ngModel)]="persona.direccion" name="direccion" required #dire=ngModel [ngClass]="{ 'is-invalid': dire.touched && !dire.valid }">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                      <label class="col-sm-3 control-label" for="form-control-1">Email</label>
+                      <div class="col-sm-9">
+                        <input  class="form-control" type="email" required [(ngModel)]="persona.email"  title = "Valor valido " #email=ngModel name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  [ngClass]="{ 'is-invalid': email.touched && !email.valid }">
+                      </div>
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="col text-center">
+                      <button (click)="save(form)" [disabled]="form.invalid" class=" col-md-6 btn btn-primary btn-large">Guardar</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
